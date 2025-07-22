@@ -3,120 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Случайный стих</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <title>Стих</title>
   <style>
-    :root {
-      --bg: #fafafa;
-      --card-bg: #ffffff;
-      --text: #000000;
-      --border: #e0e0e0;
-    }
-
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background-color: var(--bg);
-      font-family: 'Roboto', sans-serif;
-      color: var(--text);
+      background-color: white;
+      font-family: monospace;
       display: flex;
-      flex-direction: column;
-    }
-
-    .header {
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
+      justify-content: center;
+      align-items: center;
     }
 
     .poem-container {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 40px;
-      background: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border: 1px solid var(--border);
-    }
-
-    .poem-text {
+      max-width: 80%;
+      white-space: pre;
       font-size: 18px;
-      line-height: 1.8;
-      white-space: pre-line;
-      font-family: 'Playfair Display', serif;
     }
 
-    .refresh-btn {
-      display: block;
-      width: 60px;
-      height: 60px;
-      margin: 30px auto;
-      background: black;
+    .poem-line {
+      background-color: black;
       color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
+      padding: 2px 5px 2px 2px;
+      line-height: 1.3;
     }
 
-    .refresh-btn::after {
-      content: "↻";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-    }
-
-    .refresh-btn:hover {
-      transform: scale(1.1) rotate(90deg);
-    }
-
-    .footer {
-      margin-top: auto;
-      padding: 20px;
-      text-align: center;
-      color: var(--text);
-      font-size: 14px;
-      opacity: 0.6;
-    }
-
-    @media (max-width: 768px) {
-      .poem-container {
-        margin: 20px;
-        padding: 30px;
-      }
+    .empty-line {
+      width: 4px;
+      height: 1em;
+      padding: 0;
+      background-color: black;
     }
   </style>
 </head>
 <body>
-<header class="header">
-  <div class="logo">Тони Шанихин</div>
-</header>
-
-<main>
-  <div class="poem-container" id="poem">
-    <!-- Стих будет вставлен здесь -->
-  </div>
-
-  <button class="refresh-btn" onclick="window.location.reload()"></button>
-</main>
-
-<footer class="footer">
-  Нажмите кнопку для нового стиха
-</footer>
+<div class="poem-container" id="poem"></div>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
